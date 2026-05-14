@@ -18,14 +18,14 @@ function MatchPage() {
         try {
 
             const res = await axios.post(
-                "https://ai-recruitment-backend.up.railway.app/api/auth/upload",
+                "https://ai-recruitment-backend-production.up.railway.app/api/auth/upload",
                 formData
             );
 
             setResult(res.data);
 
             const matchRes = await axios.get(
-                "https://ai-recruitment-backend.up.railway.app/api/match?resumeSkills=Java,Spring Boot,React&jobSkills=Java,Spring Boot,React,Docker"
+                "https://ai-recruitment-backend-production.up.railway.app/api/match?resumeSkills=Java,Spring Boot,React&jobSkills=Java,Spring Boot,React,Docker"
             );
 
             setScore(matchRes.data);

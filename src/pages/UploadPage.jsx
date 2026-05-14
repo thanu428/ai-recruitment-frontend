@@ -19,7 +19,7 @@ function UploadPage() {
     try {
 
       const res = await axios.post(
-        "https://ai-recruitment-backend.up.railway.app/api/auth/upload",
+        ":https://ai-recruitment-backend-production.up.railway.app/api/auth/upload",
         formData
       );
 
