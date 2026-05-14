@@ -16,7 +16,7 @@ function MCQPage() {
 
   useEffect(() => {
 
-    axios.get("http://ai-recruitment-backend-production.up.railway.app/api/questions")
+    axios.get("http://ai-recruitment-backend.up.railway.app/api/questions")
       .then(res => setQuestions(res.data));
 
   }, []);
