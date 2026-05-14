@@ -12,7 +12,7 @@ function UploadPage() {
     formData.append("file", file);
 
     const res = await axios.post(
-      "http://localhost:8082/api/auth/upload",
+      "http://ai-recruitment-backend-production.up.railway.app/api/auth/upload",
       formData
     );
 

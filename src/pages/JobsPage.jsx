@@ -23,14 +23,14 @@ function JobsPage() {
     try {
 
       const res = await axios.post(
-        "http://localhost:8083/api/auth/upload",
+        "http://ai-recruitment-backend-production.up.railway.app/api/auth/upload",
         formData
       );
 
       setResult(res.data);
 
       const matchRes = await axios.get(
-        "http://localhost:8083/api/match?resumeSkills=Java,Spring Boot,React&jobSkills=Java,Spring Boot,React,Docker"
+        "http://ai-recruitment-backend-production.up.railway.app/api/match?resumeSkills=Java,Spring Boot,React&jobSkills=Java,Spring Boot,React,Docker"
       );
 
       setScore(matchRes.data);

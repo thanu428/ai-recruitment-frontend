@@ -16,7 +16,7 @@ function MCQPage() {
 
   useEffect(() => {
 
-    axios.get("http://localhost:8083/api/questions")
+    axios.get("http://ai-recruitment-backend-production.up.railway.app/api/questions")
       .then(res => setQuestions(res.data));
 
   }, []);
@@ -78,12 +78,28 @@ function MCQPage() {
             Final Score:
             {score}/{questions.length}
           </h2>
+          <button
+  onClick={() => navigate("/voice")}
+  style={{
+    marginTop:"20px",
+    background:"orange",
+    color:"white",
+    border:"none",
+    padding:"12px 25px",
+    borderRadius:"10px",
+    cursor:"pointer",
+    fontSize:"16px",
+    marginRight:"15px"
+  }}
+>
+  Start Voice Interview
+</button>
 
           <button
-            onClick={() => navigate("/voice")}
+            onClick={() => navigate("/analytics")}
             style={{
               marginTop:"20px",
-              background:"orange",
+              background:"green",
               color:"white",
               border:"none",
               padding:"12px 25px",
@@ -92,7 +108,7 @@ function MCQPage() {
               fontSize:"16px"
             }}
           >
-            Start Voice Interview
+            View Analytics
           </button>
 
         </div>
@@ -197,7 +213,8 @@ const buttonStyle = {
   borderRadius:"10px",
   background:"#f1f1f1",
   cursor:"pointer",
-  fontSize:"16px"
+  fontSize:"16px",
+  transition:"0.3s"
 };
 
 export default MCQPage;

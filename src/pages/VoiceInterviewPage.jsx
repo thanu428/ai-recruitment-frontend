@@ -42,7 +42,7 @@ function VoiceInterviewPage() {
 formData.append("file", audioBlob);
 
 fetch(
-  "http://localhost:8083/api/auth/voice",
+  "http://ai-recruitment-backend-production.up.railway.app/api/auth/voice",
   {
     method: "POST",
     body: formData
