@@ -36,7 +36,18 @@ function MCQPage() {
 
     } else {
 
-      setFinished(true);
+  axios.post(
+    "https://ai-recruitment-backend-production.up.railway.app/api/candidates",
+    {
+      name: "Candidate",
+      email: "candidate@gmail.com",
+      score: score,
+      resumeName: "resume.pdf"
+    }
+  );
+
+  setFinished(true);
+
     }
   }
 
