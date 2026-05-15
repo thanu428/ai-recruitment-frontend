@@ -11,6 +11,10 @@ function MCQPage() {
   const [score, setScore] = useState(0);
 
   const [finished, setFinished] = useState(false);
+ 
+  const [name, setName] = useState("");
+  
+  const [email, setEmail] = useState("");
 
   const navigate = useNavigate();
 
@@ -39,8 +43,8 @@ function MCQPage() {
   axios.post(
     "https://ai-recruitment-backend-production.up.railway.app/api/candidates",
     {
-      name: "Candidate",
-      email: "candidate@gmail.com",
+     name: name,
+email: email,
       score: score,
       resumeName: "resume.pdf"
     }
@@ -159,7 +163,33 @@ function MCQPage() {
             textAlign:"center",
             marginBottom:"20px"
           }}
+          
         >
+        <input
+  type="text"
+  placeholder="Enter Name"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  style={{
+    width:"100%",
+    padding:"12px",
+    marginBottom:"15px",
+    borderRadius:"8px"
+  }}
+/>
+
+<input
+  type="email"
+  placeholder="Enter Email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  style={{
+    width:"100%",
+    padding:"12px",
+    marginBottom:"20px",
+    borderRadius:"8px"
+  }}
+/>
           MCQ Test
         </h1>
 
